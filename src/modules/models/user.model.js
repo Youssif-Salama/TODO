@@ -1,13 +1,7 @@
 import mongoose from "mongoose";
 import { hashPassword } from "../../utils/bcrypt/bcrypt.utils.js";
 import dotenv from 'dotenv';
-
-// Load the environment variables based on the NODE_ENV
-if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: '.env.production' });
-} else {
-  dotenv.config({ path: '.env.development' });
-}
+dotenv.config();
 
 const userSchema = new mongoose.Schema({
   UserName:{

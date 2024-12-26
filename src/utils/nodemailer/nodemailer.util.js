@@ -4,13 +4,7 @@ import { makeToken } from "../jwt/jwt.utils.js";
 import dotenv from 'dotenv';
 import { resetPasswordEmail } from "../../../assets/templates/resetPasswordEmail.template.js";
 import { GenerateOTP } from "../../services/Otp.service.js";
-
-// Load the environment variables based on the NODE_ENV
-if (process.env.NODE_ENV === 'production') {
-  dotenv.config({ path: '.env.production' });
-} else {
-  dotenv.config({ path: '.env.development' });
-}
+dotenv.config();
 
 
 // create a transporter
