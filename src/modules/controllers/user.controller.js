@@ -9,7 +9,7 @@ export const askForResetPassword=CatchAsyncErrors(async(req,res)=>{
   const checkUserExistence=await UserModel.findOne({Email});
   if(!checkUserExistence) throw new AppError("No User with this email found!",400);
   // send email
-  sendEmailReqForResetPassword(Email);
+  await sendEmailReqForResetPassword(Email);
   res.json(200,{
     message:"Email was sent successfully"
   })
